@@ -1,113 +1,94 @@
 
-.orbit-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-
-.memory-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Byaddie Kunjaappu 🌙</title>
+<title>My Byaddie Kunjaappu 💗</title>
 <style>
 :root {
   --gold: #f6d995;
   --cream: #fff4dc;
-  --night: #050817;
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0;
-  min-height: 100vh;
-  color: var(--cream);
-  background: radial-gradient(ellipse at 50% 100%, #172b51 0%, #0a1027 42%, #03050f 100%);
+  margin: 0; min-height: 100vh; color: var(--cream);
+  background: radial-gradient(ellipse at 50% 100%, #172b51, #0a1027 48%, #03050f);
   font-family: Georgia, "Times New Roman", serif;
   overflow-x: hidden;
 }
 button { font: inherit; }
-#stars, #stars::before, #stars::after {
-  position: fixed; inset: 0; content: ""; pointer-events: none;
+#stars {
+  position: fixed; inset: 0; pointer-events: none;
   background-image:
-    radial-gradient(1px 1px at 8% 17%, #fff 98%, transparent),
+    radial-gradient(1px 1px at 8% 17%, white 98%, transparent),
     radial-gradient(2px 2px at 27% 42%, #ffe9ad 98%, transparent),
-    radial-gradient(1px 1px at 71% 19%, #fff 98%, transparent),
-    radial-gradient(1px 1px at 86% 62%, #fff 98%, transparent),
-    radial-gradient(2px 2px at 48% 77%, #fff 98%, transparent),
-    radial-gradient(1px 1px at 63% 53%, #d9e6ff 98%, transparent),
-    radial-gradient(1px 1px at 15% 81%, #fff 98%, transparent),
-    radial-gradient(1px 1px at 93% 28%, #fff 98%, transparent);
+    radial-gradient(1px 1px at 71% 19%, white 98%, transparent),
+    radial-gradient(1px 1px at 86% 62%, white 98%, transparent),
+    radial-gradient(2px 2px at 48% 77%, white 98%, transparent);
   background-size: 340px 290px;
   animation: twinkle 5s ease-in-out infinite alternate;
 }
-#stars::before { content: ""; transform: translate(90px, 40px) scale(1.3); opacity: .45; }
-#stars::after { content: ""; transform: translate(-60px, 100px) scale(.8); opacity: .6; }
 @keyframes twinkle { from { opacity: .35; } to { opacity: 1; } }
 .moon {
-  position: fixed; width: 95px; height: 95px; border-radius: 50%;
-  top: 8%; right: 12%;
+  position: fixed; width: 85px; height: 85px; border-radius: 50%;
+  top: 8%; right: 10%;
   background: radial-gradient(circle at 30% 28%, #fff9dc, #e9d9a5 55%, #b8a97f);
-  box-shadow: 0 0 35px #e8d7a566, 0 0 100px #a9c6ff22;
-  opacity: .9; pointer-events: none;
+  box-shadow: 0 0 50px #e8d7a566; pointer-events: none;
 }
 .horizon {
   position: fixed; bottom: -22vh; left: -25%; width: 150%; height: 48vh;
   border-radius: 50% 50% 0 0;
   background: linear-gradient(#172a48, #080d1d 55%, #03050c);
-  border-top: 1px solid #c9d8f255;
-  box-shadow: 0 -15px 80px #9ab7ed18;
-  pointer-events: none;
+  border-top: 1px solid #c9d8f255; pointer-events: none;
 }
 .page {
   display: none; position: relative; z-index: 2;
-  min-height: 100svh; padding: 70px 20px 45px;
-  align-items: center; justify-content: center; flex-direction: column;
-  text-align: center; animation: arrive .8s ease both;
+  min-height: 100svh; padding: 75px 18px 45px;
+  align-items: center; justify-content: center;
+  flex-direction: column; text-align: center;
+  animation: arrive .7s ease both;
 }
 .page.active { display: flex; }
-@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-.eyebrow {
-  text-transform: uppercase; letter-spacing: .28em; font: 11px Arial, sans-serif;
-  color: #d9c38d; margin-bottom: 20px;
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-h1 { font-size: clamp(2.3rem, 8vw, 5rem); line-height: 1.05; font-weight: 400; margin: 0 0 16px; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .2em;
+  font: 11px Arial, sans-serif; color: #d9c38d; margin-bottom: 18px;
+}
+h1 { font-size: clamp(2.3rem, 8vw, 5rem); line-height: 1.08; font-weight: 400; margin: 0 0 16px; }
 h2 { font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 400; margin: 0 0 16px; }
 p { line-height: 1.75; color: #e1e5f1; }
-.subtitle { max-width: 460px; margin: 0 auto 25px; font-size: 1rem; }
+.subtitle { max-width: 460px; margin: 0 auto 25px; }
 .photo-orbit {
   position: relative; width: min(90vw, 410px); height: 190px; margin: 12px auto 22px;
 }
 .orbit-photo {
-  position: absolute; width: 82px; height: 82px; border-radius: 50%;
+  position: absolute; width: 82px; height: 82px;
+  border-radius: 50%; overflow: hidden;
   border: 2px solid #f3dca8bb; box-shadow: 0 0 24px #e4c77b20;
-  display: grid; place-items: center; font-size: 2rem;
-  background: radial-gradient(circle at 30% 20%, #4b6386, #11182c 72%);
-  animation: float 5s ease-in-out infinite;
+  background: #17223c; animation: float 5s ease-in-out infinite;
 }
-.orbit-photo:nth-child(1) { left: 3%; top: 30px; transform: scale(.78); }
+.orbit-photo img, .memory-photo img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+.orbit-photo:nth-child(1) { left: 3%; top: 30px; }
 .orbit-photo:nth-child(2) { left: 29%; top: 0; animation-delay: -2s; }
-.orbit-photo:nth-child(3) { right: 23%; top: 72px; transform: scale(.8); animation-delay: -3s; }
-.orbit-photo:nth-child(4) { right: 0; top: 10px; transform: scale(.65); animation-delay: -1s; }
-@keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
-.asteroid {
-  position: relative; isolation: isolate; border: 1px solid #f4dca18c;
-  color: #fff4d9; cursor: pointer; padding: 15px 28px;
-  background: linear-gradient(145deg, #7d7b7b, #383c4a 35%, #171b2b 70%, #6d655b);
-  clip-path: polygon(12% 0, 78% 3%, 100% 27%, 91% 80%, 68% 100%, 10% 89%, 0 43%);
-  filter: drop-shadow(0 0 12px #f2d18a22);
-  min-width: 125px; transition: transform .2s, filter .2s;
+.orbit-photo:nth-child(3) { right: 23%; top: 72px; animation-delay: -3s; }
+.orbit-photo:nth-child(4) { right: 0; top: 10px; animation-delay: -1s; }
+@keyframes float {
+  0%,100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
 }
-.asteroid:hover { transform: translateY(-4px) rotate(-1deg); filter: drop-shadow(0 0 18px #f2d18a55); }
-.asteroid:active { transform: scale(.97); }
+.asteroid {
+  border: 1px solid #f4dca18c; color: #fff4d9; cursor: pointer;
+  padding: 14px 25px; background: linear-gradient(145deg, #555d71, #171b2b);
+  clip-path: polygon(12% 0, 78% 3%, 100% 27%, 91% 80%, 68% 100%, 10% 89%, 0 43%);
+  min-width: 125px; transition: transform .2s;
+}
+.asteroid:hover { transform: translateY(-3px); }
 .music-control {
   position: fixed; z-index: 5; top: 14px; left: 14px;
   border: 1px solid #ffffff38; border-radius: 24px; padding: 9px 13px;
@@ -115,57 +96,47 @@ p { line-height: 1.75; color: #e1e5f1; }
 }
 .hint { min-height: 25px; color: #e6cd8d; font-size: .92rem; }
 .keypad { width: min(300px, 90vw); margin: 20px auto; }
-#pin-display { letter-spacing: .5em; font-size: 2rem; min-height: 43px; color: var(--gold); }
+#pin-display { letter-spacing: .35em; font-size: 1.7rem; min-height: 43px; color: var(--gold); }
 .keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .key {
   min-height: 55px; border-radius: 14px; border: 1px solid #aab9d33d;
   background: #17223cbb; color: #fff4dc; font-size: 1.2rem; cursor: pointer;
 }
 .key:hover { background: #283957; }
-.book {
-  width: min(720px, 94vw); margin: 22px auto; perspective: 1200px;
-}
+.book { width: min(720px, 94vw); margin: 22px auto; }
 .book-pages {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  border-radius: 8px; overflow: hidden;
-  box-shadow: 0 20px 70px #0008; transform-origin: center;
-  animation: bookopen 1.2s ease both;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: 8px; overflow: hidden; box-shadow: 0 20px 70px #0008;
 }
-@keyframes bookopen { from { transform: rotateX(13deg) scale(.9); opacity: .2; } to { transform: rotateX(0) scale(1); opacity: 1; } }
 .book-page {
-  min-height: 270px; padding: 18px 14px;
+  min-width: 0; min-height: 270px; padding: 18px 14px;
   background: linear-gradient(110deg, #f4e7ca, #fff6e3 45%, #ead8b6);
   color: #453c34; border: 1px solid #d1b98e;
 }
-.book-page + .book-page { border-left: 2px solid #d2b98d; }
 .book-page h3 { font-size: 1rem; font-weight: normal; }
 .memory-photo {
-  height: 105px; margin: 10px 0; border: 1px solid #b6a17d;
-  display: grid; place-items: center; font-size: 2rem;
-  background: linear-gradient(135deg, #d9d7d2, #a8b6c8, #e5d6b8);
-  border-radius: 3px; color: #514d49;
+  height: 120px; margin: 10px 0; overflow: hidden;
+  border: 1px solid #b6a17d; background: #d9d7d2; border-radius: 3px;
 }
 .book-page small { font-size: .72rem; }
 .letter {
   max-width: 560px; width: 100%; padding: clamp(24px, 6vw, 45px);
   border: 1px solid #e6d09b55; border-radius: 8px;
-  background: linear-gradient(145deg, #10182bdf, #090e1ceF);
-  box-shadow: 0 0 60px #d3bb7810; text-align: left;
+  background: #10182bdf; box-shadow: 0 0 60px #d3bb7810; text-align: left;
 }
 .letter p { font-size: 1.04rem; }
 .letter .signoff { color: var(--gold); font-style: italic; }
 .final-photos { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 20px auto; }
-.final-photos .orbit-photo { position: relative; left: auto; right: auto; top: auto; flex: 0 0 82px; }
-.burst { font-size: 2.3rem; letter-spacing: .35rem; animation: float 3s ease-in-out infinite; }
-footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-spacing: .12em; }
+.final-photos .orbit-photo { position: relative; left: auto; right: auto; top: auto; flex: 0 0 75px; }
+.burst { font-size: 2.3rem; letter-spacing: .2rem; animation: float 3s ease-in-out infinite; }
+footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-spacing: .1em; }
 @media (max-width: 420px) {
-  .page { padding: 65px 15px 35px; }
-  .moon { width: 65px; height: 65px; right: 8%; top: 7%; }
+  .moon { width: 60px; height: 60px; }
   .photo-orbit { height: 155px; }
-  .orbit-photo { width: 67px; height: 67px; font-size: 1.6rem; }
-  .book-page { padding: 12px 8px; min-height: 245px; }
+  .orbit-photo { width: 67px; height: 67px; }
+  .book-page { padding: 10px 7px; min-height: 230px; }
   .memory-photo { height: 85px; }
-  .book-page h3 { font-size: .9rem; }
+  .book-page h3 { font-size: .85rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -181,13 +152,13 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
   <div class="eyebrow">a tiny universe, made for you</div>
   <h1>My Byaddie<br><span style="color:var(--gold)">Kunjaappu</span></h1>
   <p class="subtitle">Happy birthday, my love. Somewhere in this endless universe, my favourite place is still beside you.</p>
-  <div class="photo-orbit" aria-label="Photo placeholders">
-    <div class="orbit-photo" title="Replace with your photo">🌷</div>
-    <div class="orbit-photo" title="Replace with your photo">🌙</div>
-    <div class="orbit-photo" title="Replace with your photo">💫</div>
-    <div class="orbit-photo" title="Replace with your photo">🪐</div>
+  <div class="photo-orbit">
+    <div class="orbit-photo"><img src="photo1.jpeg" alt="Our memory 1"></div>
+    <div class="orbit-photo"><img src="photo2.jpeg" alt="Our memory 2"></div>
+    <div class="orbit-photo"><img src="photo3.jpeg" alt="Our memory 3"></div>
+    <div class="orbit-photo"><img src="photo4.jpeg" alt="Our memory 4"></div>
   </div>
-  <button class="asteroid" onclick="go(2);startMusic()">OPEN ✦</button>
+  <button class="asteroid" onclick="go(2); startMusic()">OPEN ✦</button>
   <footer>ONE LITTLE JOURNEY AROUND OUR UNIVERSE</footer>
 </section>
 
@@ -196,7 +167,7 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
   <h2>A little lock in space</h2>
   <p class="subtitle">Some doors open with a number only you know.</p>
   <div class="keypad">
-    <div id="pin-display" aria-live="polite">••••</div>
+    <div id="pin-display">○ ○ ○ ○</div>
     <div class="keys">
       <button class="key" onclick="digit('1')">1</button><button class="key" onclick="digit('2')">2</button><button class="key" onclick="digit('3')">3</button>
       <button class="key" onclick="digit('4')">4</button><button class="key" onclick="digit('5')">5</button><button class="key" onclick="digit('6')">6</button>
@@ -204,7 +175,7 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
       <button class="key" onclick="clearPin()">⌫</button><button class="key" onclick="digit('0')">0</button><button class="key" onclick="checkPin()">↵</button>
     </div>
   </div>
-  <div class="hint" id="pin-hint" aria-live="polite">Four little numbers. Take your time.</div>
+  <div class="hint" id="pin-hint">Four little numbers. Take your time.</div>
   <button class="asteroid" onclick="go(1)">BACK</button>
 </section>
 
@@ -212,21 +183,18 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
   <div class="eyebrow">chapter one · little moments</div>
   <h2>Our little book</h2>
   <p class="subtitle">Four tiny windows into a world that means everything to me.</p>
-  <div class="book">
-    <div class="book-pages">
-      <div class="book-page">
-        <h3>Little things I keep</h3>
-        <div class="memory-photo">📷</div><small>OUR FIRST PLACEHOLDER MEMORY</small>
-        <div class="memory-photo">🌸</div><small>A MOMENT I LOVE</small>
-      </div>
-      <div class="book-page">
-        <h3>Little things I treasure</h3>
-        <div class="memory-photo">✨</div><small>A DAY TO REMEMBER</small>
-        <div class="memory-photo">💗</div><small>MY FAVOURITE PERSON</small>
-      </div>
+  <div class="book"><div class="book-pages">
+    <div class="book-page">
+      <h3>Little things I keep</h3>
+      <div class="memory-photo"><img src="photo5.jpeg" alt="Memory 5"></div><small>A MOMENT I KEEP</small>
+      <div class="memory-photo"><img src="photo6.jpeg" alt="Memory 6"></div><small>A MOMENT I LOVE</small>
     </div>
-  </div>
-  <p class="hint">These are placeholders for your real photos.</p>
+    <div class="book-page">
+      <h3>Little things I treasure</h3>
+      <div class="memory-photo"><img src="photo7.jpeg" alt="Memory 7"></div><small>A DAY TO REMEMBER</small>
+      <div class="memory-photo"><img src="photo8.jpeg" alt="Memory 8"></div><small>MY FAVOURITE PERSON</small>
+    </div>
+  </div></div>
   <button class="asteroid" onclick="go(4)">NEXT ✦</button>
 </section>
 
@@ -240,7 +208,7 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
     <p>I hope this new year of your life brings you gentle mornings, silly laughs, beautiful surprises, and so many reasons to smile. No matter how big the universe gets, I'm always cheering for you.</p>
     <p class="signoff">Happy birthday, my love. Always. ♡</p>
   </article>
-  <button class="asteroid" onclick="go(5)" style="margin-top:25px">ONE LAST THING ✦</button>
+  <button class="asteroid" style="margin-top:25px" onclick="go(5)">ONE LAST THING ✦</button>
 </section>
 
 <section class="page" id="page5">
@@ -249,8 +217,10 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
   <h1 style="color:var(--gold)">Happy Birthday,<br>My Love!</h1>
   <p class="subtitle">If I searched every star, I'd still choose you.</p>
   <div class="final-photos">
-    <div class="orbit-photo">🌷</div><div class="orbit-photo">💗</div>
-    <div class="orbit-photo">🌙</div><div class="orbit-photo">✨</div>
+    <div class="orbit-photo"><img src="photo1.jpeg" alt="Our photo"></div>
+    <div class="orbit-photo"><img src="photo2.jpeg" alt="Our photo"></div>
+    <div class="orbit-photo"><img src="photo3.jpeg" alt="Our photo"></div>
+    <div class="orbit-photo"><img src="photo4.jpeg" alt="Our photo"></div>
   </div>
   <p>To my Byaddie Kunjaappu, my favourite little universe. ♡</p>
   <button class="asteroid" onclick="go(1)">REVISIT OUR UNIVERSE</button>
@@ -262,24 +232,24 @@ footer { color: #aeb9d2; font: 10px Arial, sans-serif; margin-top: 24px; letter-
 let pin = "";
 let audioContext = null;
 let musicOn = false;
-let musicTimer = null;
 let oscillators = [];
 
 function go(number) {
   document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
   document.getElementById("page" + number).classList.add("active");
-  window.scrollTo({top: 0, behavior: "smooth"});
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function digit(number) {
   if (pin.length >= 4) return;
   pin += number;
-  document.getElementById("pin-display").textContent = "●".repeat(pin.length) + "○".repeat(4-pin.length);
+  document.getElementById("pin-display").textContent =
+    "● ".repeat(pin.length) + "○ ".repeat(4 - pin.length);
   document.getElementById("pin-hint").textContent = "A little closer...";
   if (pin.length === 4) checkPin();
 }
 function clearPin() {
   pin = "";
-  document.getElementById("pin-display").textContent = "••••";
+  document.getElementById("pin-display").textContent = "○ ○ ○ ○";
   document.getElementById("pin-hint").textContent = "Try again, my love.";
 }
 function checkPin() {
@@ -287,10 +257,10 @@ function checkPin() {
     document.getElementById("pin-hint").textContent = "The stars opened the way for you. ✨";
     setTimeout(() => go(3), 650);
   } else {
-    document.getElementById("pin-hint").textContent = "Not quite, sweetheart. Try the special date again.";
+    document.getElementById("pin-hint").textContent = "Not quite, sweetheart. Try again.";
     pin = "";
     setTimeout(() => {
-      document.getElementById("pin-display").textContent = "••••";
+      document.getElementById("pin-display").textContent = "○ ○ ○ ○";
     }, 250);
   }
 }
@@ -300,9 +270,8 @@ function startMusic() {
     audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
     if (audioContext.state === "suspended") audioContext.resume();
     const master = audioContext.createGain();
-    master.gain.value = 0.035;
+    master.gain.value = 0.025;
     master.connect(audioContext.destination);
-    // Gentle original ambient tones generated locally. No external music file.
     [110, 164.81, 220].forEach((frequency, index) => {
       const oscillator = audioContext.createOscillator();
       const gain = audioContext.createGain();
@@ -324,7 +293,9 @@ function toggleMusic() {
   if (!musicOn) {
     startMusic();
   } else {
-    oscillators.forEach(oscillator => { try { oscillator.stop(); } catch (error) {} });
+    oscillators.forEach(oscillator => {
+      try { oscillator.stop(); } catch (error) {}
+    });
     oscillators = [];
     musicOn = false;
     document.getElementById("music").textContent = "♫ Music: off";
